@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "UNO Online — Play the classic card game" },
+        { title: "WildCards — Play the classic card game" },
         {
           name: "description",
           content:
@@ -92,11 +92,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:card", content: "summary_large_image" },
         {
           property: "og:title",
-          content: "UNO Online — Play the classic card game",
+          content: "WildCards — Play the classic card game",
         },
         {
           name: "twitter:title",
-          content: "UNO Online — Play the classic card game",
+          content: "WildCards — Play the classic card game",
         },
         {
           property: "og:description",
@@ -111,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ],
       links: [
         { rel: "stylesheet", href: appCss },
-        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+        { rel: "icon", href: "/favicon.png", type: "image/png" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",

@@ -8,7 +8,7 @@ import { useHydrated } from "@/lib/hydrated";
 export const Route = createFileRoute("/play")({
   head: () => ({
     meta: [
-      { title: "Play UNO vs Bots — UNO Online" },
+      { title: "Play UNO vs Bots — WildCards" },
       {
         name: "description",
         content:

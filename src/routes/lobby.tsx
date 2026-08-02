@@ -15,12 +15,12 @@ function genCode() {
 export const Route = createFileRoute("/lobby")({
   head: () => ({
     meta: [
-      { title: "Lobby — UNO Online" },
+      { title: "Lobby — WildCards" },
       {
         name: "description",
         content: "Create a private UNO room or join one with an invite code.",
       },
-      { property: "og:title", content: "UNO Online — Lobby" },
+      { property: "og:title", content: "WildCards — Lobby" },
       {
         property: "og:description",
         content: "Create or join a private UNO room.",
