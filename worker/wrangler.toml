@@ -1,0 +1,11 @@
+name = "uno-rooms"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+[[durable_objects.bindings]]
+name = "UNO_ROOM"
+class_name = "UnoRoom"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["UnoRoom"]
