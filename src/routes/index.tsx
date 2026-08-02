@@ -7,7 +7,7 @@ import { ArrowRight, Users, Bot, Zap } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UNO Online — Play the classic card game" },
+      { title: "WildCards — Play the classic card game" },
       {
         name: "description",
         content:
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "UNO Online — Play the classic card game",
+        content: "WildCards — Play the classic card game",
       },
       {
         property: "og:description",

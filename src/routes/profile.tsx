@@ -16,12 +16,12 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Your Profile — UNO Online" },
+      { title: "Your Profile — WildCards" },
       {
         name: "description",
-        content: "Manage your UNO Online name, avatar and view your stats.",
+        content: "Manage your WildCards name, avatar and view your stats.",
       },
-      { property: "og:title", content: "UNO Online — Profile" },
+      { property: "og:title", content: "WildCards — Profile" },
       {
         property: "og:description",
         content: "Manage your UNO player profile.",

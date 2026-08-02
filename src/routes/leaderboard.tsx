@@ -8,13 +8,13 @@ import { Trophy } from "lucide-react";
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: [
-      { title: "Leaderboard — UNO Online" },
+      { title: "Leaderboard — WildCards" },
       {
         name: "description",
-        content: "Top UNO Online players ranked by total score.",
+        content: "Top WildCards players ranked by total score.",
       },
-      { property: "og:title", content: "UNO Online — Leaderboard" },
-      { property: "og:description", content: "Top UNO Online players." },
+      { property: "og:title", content: "WildCards — Leaderboard" },
+      { property: "og:description", content: "Top WildCards players." },
     ],
   }),
   component: LB,

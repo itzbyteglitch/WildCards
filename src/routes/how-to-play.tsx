@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/how-to-play")({
   head: () => ({
     meta: [
-      { title: "How to Play — UNO Online" },
+      { title: "How to Play — WildCards" },
       {
         name: "description",
         content:

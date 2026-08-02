@@ -31,7 +31,7 @@ export const Route = createFileRoute("/room/$code")({
   validateSearch: (s) => search.parse(s),
   head: ({ params }) => ({
     meta: [
-      { title: `Room ${params.code} — UNO Online` },
+      { title: `Room ${params.code} — WildCards` },
       { name: "description", content: `Private UNO room ${params.code}.` },
       { property: "og:title", content: `UNO Room ${params.code}` },
       { property: "og:description", content: "Private UNO room." },

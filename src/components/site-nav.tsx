@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles } from "lucide-react";
 
 const links = [
   { to: "/play", label: "Play" },
@@ -17,10 +16,14 @@ export function SiteNav() {
           to="/"
           className="flex items-center gap-2 font-display text-lg font-bold"
         >
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg btn-gradient">
-            <Sparkles className="h-4 w-4" />
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
+            <img
+              src="/logo.png"
+              alt="WildCards"
+              className="h-8 w-8 object-cover"
+            />
           </span>
-          UNO Online
+          WildCards
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           {links.map((l) => (
