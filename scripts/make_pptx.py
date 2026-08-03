@@ -55,7 +55,9 @@ PAGE = [0]
 
 def new_slide():
     PAGE[0] += 1
-    return prs.slides.add_slide(BLANK)
+    slide = prs.slides.add_slide(BLANK)
+    title_background(slide)
+    return slide
 
 
 def add_rect(slide, x, y, w, h, fill=None, line=None, line_w=0.75, shape=MSO_SHAPE.RECTANGLE, radius=None, shadow=True):
@@ -120,6 +122,38 @@ def color_stripe(slide):
     q = int(SLIDE_W) // 4
     for i, c in enumerate([RED, YELLOW, GREEN, BLUE]):
         add_rect(slide, Emu(q * i), 0, Emu(q), Inches(0.09), fill=c)
+
+
+def title_background(slide):
+    """Reproduce the Slide 1 background on every slide:
+    deep slate base + soft radial glow (top-right) + a fan of UNO cards.
+    Content layers over this; the fan peeks through where the layout is empty.
+    """
+    # 1. Deep slate base.
+    add_rect(slide, 0, 0, SLIDE_W, SLIDE_H, fill=BG)
+    # 2. Soft radial glow behind the card fan.
+    add_rect(slide, Inches(7.2), Inches(0.4), Inches(6.2), Inches(5.6),
+             fill=BG_SOFT, shape=MSO_SHAPE.OVAL)
+    # 3. Fan of UNO cards (top-right corner).
+    fan = [
+        (RED,    -22, Inches(8.7),  Inches(1.15)),
+        (YELLOW,  -8, Inches(9.1),  Inches(1.15)),
+        (GREEN,    8, Inches(9.1),  Inches(1.15)),
+        (BLUE,    22, Inches(8.7),  Inches(1.15)),
+    ]
+    for c, rot, x, y in fan:
+        cw = Inches(1.15)
+        ch = Inches(1.75)
+        sp = add_rect(slide, x, y, cw, ch, fill=c,
+                      shape=MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.14)
+        sp.rotation = rot
+        inner = add_rect(slide, x + Inches(0.14), y + Inches(0.22),
+                         cw - Inches(0.28), ch - Inches(0.44),
+                         fill=BG, shape=MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.18)
+        inner.rotation = rot
+        add_text(slide, x + Inches(0.14), y + Inches(0.5),
+                 cw - Inches(0.28), Inches(0.6),
+                 "UNO", size=22, color=c, bold=True, align=PP_ALIGN.CENTER)
 
 
 def header(slide, title, kicker=None, accent=ACCENT):
@@ -214,30 +248,6 @@ def bullets(slide, x, y, w, h, items, size=14, gap=8, lead_color=TEXT, body_colo
 # SLIDE 1 — TITLE
 # ============================================================================
 s = new_slide()
-add_rect(s, 0, 0, SLIDE_W, SLIDE_H, fill=BG)
-# soft radial glow behind cards
-add_rect(s, Inches(7.2), Inches(0.4), Inches(6.2), Inches(5.6), fill=BG_SOFT, shape=MSO_SHAPE.OVAL)
-
-# Fan of UNO cards (top-right)
-fan = [
-    (RED, -22, Inches(8.7), Inches(1.15)),
-    (YELLOW, -8, Inches(9.1), Inches(1.15)),
-    (GREEN, 8, Inches(9.1), Inches(1.15)),
-    (BLUE, 22, Inches(8.7), Inches(1.15)),
-]
-for i, (c, rot, x, y) in enumerate(fan):
-    cw = Inches(1.15)
-    ch = Inches(1.75)
-    sp = add_rect(s, x, y, cw, ch, fill=c, shape=MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.14)
-    sp.rotation = rot
-    # inner card
-    inner = add_rect(s, x + Inches(0.14), y + Inches(0.22), cw - Inches(0.28), ch - Inches(0.44),
-                     fill=BG, shape=MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.18)
-    inner.rotation = rot
-    # value text on inner
-    add_text(s, x + Inches(0.14), y + Inches(0.5), cw - Inches(0.28), Inches(0.6),
-             "UNO", size=22, color=c, bold=True, align=PP_ALIGN.CENTER)
-
 # Title block (left)
 add_text(s, Inches(0.9), Inches(1.6), Inches(7.2), Inches(0.4),
          "TECHNICAL PROJECT PRESENTATION", size=13, color=YELLOW, bold=True)
@@ -845,7 +855,6 @@ card(s, Inches(0.9), Inches(6.35), Inches(11.5), Inches(0.75),
 # SLIDE 22 — THANK YOU
 # ============================================================================
 s = new_slide()
-add_rect(s, 0, 0, SLIDE_W, SLIDE_H, fill=BG)
 q = int(SLIDE_W) // 4
 for i, c in enumerate([RED, YELLOW, GREEN, BLUE]):
     add_rect(s, Emu(q * i), 0, Emu(q), Inches(0.12), fill=c)
