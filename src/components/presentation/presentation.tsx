@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useHydrated } from "@/lib/hydrated";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
-const CANVA_VIEW_URL = "https://www.canva.com/design/DAHR9OitR9I/TF-hjuOw6MmVXIk7ZOKKZw/view?embed";
+const CANVA_VIEW_URL =
+  "https://www.canva.com/design/DAHR9OitR9I/TF-hjuOw6MmVXIk7ZOKKZw/view?usp=sharing";
 const GITHUB_REPO_URL = "https://github.com/itzbyteglitch/WildCards";
 const GITHUB_PROFILE_URL = "https://github.com/itzbyteglitch";
 
@@ -50,39 +51,45 @@ export function Presentation() {
       }`}
       data-presentation
     >
-      <iframe
-        src={`${CANVA_VIEW_URL}?embed`}
-        title="WildCards Technical Presentation"
-        className="w-full h-full border-0"
-        allowFullScreen
-        allow="clipboard-write; encrypted-media; picture-in-picture"
-        loading="lazy"
-      />
-
-      <div className="absolute top-4 right-4 z-10 flex gap-2">
-        <button
-          onClick={() =>
-            window.open(GITHUB_REPO_URL, "_blank", "noopener,noreferrer")
-          }
-          className="inline-flex items-center gap-2 rounded-lg bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-accent transition-colors border border-border"
-          aria-label="View on GitHub"
-        >
-          <Github className="h-4 w-4" />
-          View on GitHub
-        </button>
-        {isFullscreen && (
-          <button
-            onClick={() => setIsFullscreen(false)}
-            className="inline-flex items-center justify-center rounded-lg bg-card px-3 py-2 text-sm font-medium text-foreground hover:bg-accent transition-colors border border-border"
-            aria-label="Exit fullscreen"
-          >
-            ✕
-          </button>
-        )}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center space-y-6 p-8 max-w-2xl">
+          <div className="w-24 h-24 mx-auto bg-uno-red rounded-2xl flex items-center justify-center">
+            <ExternalLink className="h-10 w-10 text-white" />
+          </div>
+          <h2 className="text-3xl font-bold text-foreground">
+            WildCards Technical Presentation
+          </h2>
+          <p className="text-muted-foreground">
+            A 22-slide technical presentation covering the WildCards
+            browser-based multiplayer UNO game architecture.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <button
+              onClick={() =>
+                window.open(CANVA_VIEW_URL, "_blank", "noopener,noreferrer")
+              }
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              aria-label="View Presentation on Canva"
+            >
+              <ExternalLink className="h-4 w-4" />
+              View on Canva
+            </button>
+            <button
+              onClick={() =>
+                window.open(GITHUB_REPO_URL, "_blank", "noopener,noreferrer")
+              }
+              className="inline-flex items-center gap-2 rounded-lg bg-card px-6 py-3 text-sm font-medium text-foreground hover:bg-accent transition-colors border border-border"
+              aria-label="View on GitHub"
+            >
+              <Github className="h-4 w-4" />
+              View on GitHub
+            </button>
+          </div>
+        </div>
       </div>
 
       {!isFullscreen && (
-        <footer className="mt-4 text-center text-sm text-muted-foreground">
+        <footer className="absolute bottom-4 left-0 right-0 text-center text-sm text-muted-foreground">
           <a
             href={GITHUB_REPO_URL}
             target="_blank"
