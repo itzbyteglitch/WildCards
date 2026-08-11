@@ -14,6 +14,7 @@ import { Route as HowToPlayRouteImport } from './routes/how-to-play'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LobbyRouteImport } from './routes/lobby'
 import { Route as PlayRouteImport } from './routes/play'
+import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RoomCodeRouteImport } from './routes/room.$code'
@@ -43,6 +44,11 @@ const PlayRoute = PlayRouteImport.update({
   path: '/play',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
   '/play': typeof PlayRoute
+  '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/room/$code': typeof RoomCodeRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
   '/play': typeof PlayRoute
+  '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/room/$code': typeof RoomCodeRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
   '/play': typeof PlayRoute
+  '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/room/$code': typeof RoomCodeRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/lobby'
     | '/play'
+    | '/presentation'
     | '/profile'
     | '/sitemap.xml'
     | '/room/$code'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/lobby'
     | '/play'
+    | '/presentation'
     | '/profile'
     | '/sitemap.xml'
     | '/room/$code'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/leaderboard'
     | '/lobby'
     | '/play'
+    | '/presentation'
     | '/profile'
     | '/sitemap.xml'
     | '/room/$code'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   LeaderboardRoute: typeof LeaderboardRoute
   LobbyRoute: typeof LobbyRoute
   PlayRoute: typeof PlayRoute
+  PresentationRoute: typeof PresentationRoute
   ProfileRoute: typeof ProfileRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   RoomCodeRoute: typeof RoomCodeRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   LeaderboardRoute: LeaderboardRoute,
   LobbyRoute: LobbyRoute,
   PlayRoute: PlayRoute,
+  PresentationRoute: PresentationRoute,
   ProfileRoute: ProfileRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   RoomCodeRoute: RoomCodeRoute,

@@ -6,6 +6,7 @@ const links = [
   { to: "/how-to-play", label: "How to Play" },
   { to: "/leaderboard", label: "Leaderboard" },
   { to: "/profile", label: "Profile" },
+  { to: "/presentation", label: "Presentation" },
 ];
 
 export function SiteNav() {

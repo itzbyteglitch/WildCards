@@ -132,7 +132,7 @@ export function applyAction(
 
   switch (action.type) {
     case "say_uno": {
-      if (player.hand.length === 1) {
+      if (player.hand.length === 2) {
         player.said_uno = true;
         s.lastAction = { type: "uno", playerId: player.id };
         s.log.push(logEntry(`${player.name} said UNO!`));
