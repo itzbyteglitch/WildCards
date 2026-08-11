@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { useHydrated } from "@/lib/hydrated";
 import { Github } from "lucide-react";
 
-const CANVA_DESIGN_ID = "DAHRy7Fmzy4";
-const CANVA_VIEW_URL = `https://www.canva.com/design/${CANVA_DESIGN_ID}/view`;
+const CANVA_VIEW_URL = "https://www.canva.com/design/DAF5absfvbioum6h/view";
 const GITHUB_REPO_URL = "https://github.com/itzbyteglitch/WildCards";
 const GITHUB_PROFILE_URL = "https://github.com/itzbyteglitch";
 
