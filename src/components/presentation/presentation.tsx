@@ -158,7 +158,7 @@ export function Presentation() {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [isFullscreen]);
 
   if (!isReady) {
     return (

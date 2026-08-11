@@ -44,7 +44,7 @@ export function ControlBar({
   onDownload,
   onGitHub,
   onExit,
-  }: ControlBarProps) {
+}: ControlBarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
