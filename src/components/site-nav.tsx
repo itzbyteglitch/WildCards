@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Github } from "lucide-react";
 
 const links = [
   { to: "/play", label: "Play" },
@@ -39,6 +40,16 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
+          <a
+            href="https://github.com/itzbyteglitch/WildCards"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+          >
+            <Github className="h-4 w-4" aria-hidden="true" />
+            <span className="hidden sm:inline">View on Source</span>
+            <span className="sm:hidden">Source</span>
+          </a>
         </nav>
       </div>
     </header>

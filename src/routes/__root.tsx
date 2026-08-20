@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteNav } from "../components/site-nav";
+import { SiteFooter } from "../components/site-footer";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -155,6 +156,7 @@ function RootComponent() {
         <main className="flex-1">
           <Outlet />
         </main>
+        <SiteFooter />
       </div>
       <Toaster theme="dark" position="top-center" richColors />
     </QueryClientProvider>
