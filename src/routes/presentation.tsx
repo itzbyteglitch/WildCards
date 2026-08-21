@@ -64,7 +64,7 @@ function PresentationPage() {
           <div className="w-full" style={{ aspectRatio: "16 / 9" }}>
             <iframe
               ref={iframeRef}
-              src="https://storage.googleapis.com/ppt-html-converter-ppt-hosted/53e4390a-2a02-4dea-96b9-93ae55c9b3b4/index.html"
+              src="https://storage.googleapis.com/ppt-html-converter-ppt-hosted/803bba57-eceb-42eb-bfe1-fdcbb262b0e4/index.html"
               title="WildCards Technical Presentation"
               className="h-full w-full border-0"
               allow="fullscreen; autoplay; clipboard-read; clipboard-write"
