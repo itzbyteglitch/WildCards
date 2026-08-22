@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -83,31 +84,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "WildCards — Play the classic card game" },
+        { title: "EmbedPPT — PPTX to embeddable web presentations" },
         {
           name: "description",
           content:
-            "Play UNO in your browser with friends or bots. Free, fast, and beautifully polished.",
+            "Convert PowerPoint PPTX files to responsive, embeddable web presentations in your browser.",
         },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
         {
           property: "og:title",
-          content: "WildCards — Play the classic card game",
+          content: "EmbedPPT — PPTX to embeddable web presentations",
         },
         {
           name: "twitter:title",
-          content: "WildCards — Play the classic card game",
+          content: "EmbedPPT — PPTX to embeddable web presentations",
         },
         {
           property: "og:description",
           content:
-            "Play UNO in your browser with friends or bots. Free, fast, and beautifully polished.",
+            "Convert PowerPoint PPTX files to responsive, embeddable web presentations in your browser.",
         },
         {
           name: "twitter:description",
           content:
-            "Play UNO in your browser with friends or bots. Free, fast, and beautifully polished.",
+            "Convert PowerPoint PPTX files to responsive, embeddable web presentations in your browser.",
         },
       ],
       links: [
@@ -148,15 +149,17 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isEmbed = pathname.startsWith("/embed/");
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
-        <SiteNav />
+        {!isEmbed && <SiteNav />}
         <main className="flex-1">
           <Outlet />
         </main>
-        <SiteFooter />
+        {!isEmbed && <SiteFooter />}
       </div>
       <Toaster theme="dark" position="top-center" richColors />
     </QueryClientProvider>

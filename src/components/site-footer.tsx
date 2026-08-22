@@ -3,12 +3,12 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 glass">
       <div className="mx-auto max-w-6xl px-4 py-4 text-center text-sm text-muted-foreground">
         <a
-          href="https://github.com/itzbyteglitch/WildCards"
+          href="https://github.com/itzbyteglitch/EmbedPPT"
           target="_blank"
           rel="noreferrer"
           className="font-medium text-foreground/90 underline decoration-primary/70 underline-offset-4 transition-colors hover:text-primary"
         >
-          WildCards © 2026
+          EmbedPPT © 2026
         </a>{" "}
         |{" "}
         <a

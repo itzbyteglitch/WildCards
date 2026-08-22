@@ -2,12 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Github } from "lucide-react";
 
 const links = [
-  { to: "/play", label: "Play" },
-  { to: "/lobby", label: "Lobby" },
-  { to: "/how-to-play", label: "How to Play" },
-  { to: "/leaderboard", label: "Leaderboard" },
-  { to: "/profile", label: "Profile" },
-  { to: "/presentation", label: "Presentation" },
+  { to: "/", label: "Converter" },
+  { to: "/docs", label: "Docs" },
 ];
 
 export function SiteNav() {
@@ -21,11 +17,11 @@ export function SiteNav() {
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
             <img
               src="/logo.png"
-              alt="WildCards"
+              alt="EmbedPPT"
               className="h-8 w-8 object-cover"
             />
           </span>
-          WildCards
+          EmbedPPT
         </Link>
         <nav className="flex items-center gap-1 text-sm">
           {links.map((l) => (
@@ -41,13 +37,13 @@ export function SiteNav() {
             </Link>
           ))}
           <a
-            href="https://github.com/itzbyteglitch/WildCards"
+            href="https://github.com/itzbyteglitch/EmbedPPT"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
           >
             <Github className="h-4 w-4" aria-hidden="true" />
-            <span className="hidden sm:inline">View on Source</span>
+            <span className="hidden sm:inline">Source</span>
             <span className="sm:hidden">Source</span>
           </a>
         </nav>

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocsRouteImport } from './routes/docs'
 import { Route as HowToPlayRouteImport } from './routes/how-to-play'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LobbyRouteImport } from './routes/lobby'
@@ -17,11 +18,18 @@ import { Route as PlayRouteImport } from './routes/play'
 import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as EmbedIdRouteImport } from './routes/embed.$id'
+import { Route as PIdRouteImport } from './routes/p.$id'
 import { Route as RoomCodeRouteImport } from './routes/room.$code'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowToPlayRoute = HowToPlayRouteImport.update({
@@ -59,6 +67,16 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmbedIdRoute = EmbedIdRouteImport.update({
+  id: '/embed/$id',
+  path: '/embed/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PIdRoute = PIdRouteImport.update({
+  id: '/p/$id',
+  path: '/p/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RoomCodeRoute = RoomCodeRouteImport.update({
   id: '/room/$code',
   path: '/room/$code',
@@ -67,6 +85,7 @@ const RoomCodeRoute = RoomCodeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/docs': typeof DocsRoute
   '/how-to-play': typeof HowToPlayRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
@@ -74,10 +93,13 @@ export interface FileRoutesByFullPath {
   '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/embed/$id': typeof EmbedIdRoute
+  '/p/$id': typeof PIdRoute
   '/room/$code': typeof RoomCodeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/docs': typeof DocsRoute
   '/how-to-play': typeof HowToPlayRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
@@ -85,11 +107,14 @@ export interface FileRoutesByTo {
   '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/embed/$id': typeof EmbedIdRoute
+  '/p/$id': typeof PIdRoute
   '/room/$code': typeof RoomCodeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/docs': typeof DocsRoute
   '/how-to-play': typeof HowToPlayRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lobby': typeof LobbyRoute
@@ -97,12 +122,15 @@ export interface FileRoutesById {
   '/presentation': typeof PresentationRoute
   '/profile': typeof ProfileRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/embed/$id': typeof EmbedIdRoute
+  '/p/$id': typeof PIdRoute
   '/room/$code': typeof RoomCodeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/docs'
     | '/how-to-play'
     | '/leaderboard'
     | '/lobby'
@@ -110,10 +138,13 @@ export interface FileRouteTypes {
     | '/presentation'
     | '/profile'
     | '/sitemap.xml'
+    | '/embed/$id'
+    | '/p/$id'
     | '/room/$code'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/docs'
     | '/how-to-play'
     | '/leaderboard'
     | '/lobby'
@@ -121,10 +152,13 @@ export interface FileRouteTypes {
     | '/presentation'
     | '/profile'
     | '/sitemap.xml'
+    | '/embed/$id'
+    | '/p/$id'
     | '/room/$code'
   id:
     | '__root__'
     | '/'
+    | '/docs'
     | '/how-to-play'
     | '/leaderboard'
     | '/lobby'
@@ -132,11 +166,14 @@ export interface FileRouteTypes {
     | '/presentation'
     | '/profile'
     | '/sitemap.xml'
+    | '/embed/$id'
+    | '/p/$id'
     | '/room/$code'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DocsRoute: typeof DocsRoute
   HowToPlayRoute: typeof HowToPlayRoute
   LeaderboardRoute: typeof LeaderboardRoute
   LobbyRoute: typeof LobbyRoute
@@ -144,6 +181,8 @@ export interface RootRouteChildren {
   PresentationRoute: typeof PresentationRoute
   ProfileRoute: typeof ProfileRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  EmbedIdRoute: typeof EmbedIdRoute
+  PIdRoute: typeof PIdRoute
   RoomCodeRoute: typeof RoomCodeRoute
 }
 
@@ -154,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-play': {
@@ -205,6 +251,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/embed/$id': {
+      id: '/embed/$id'
+      path: '/embed/$id'
+      fullPath: '/embed/$id'
+      preLoaderRoute: typeof EmbedIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/p/$id': {
+      id: '/p/$id'
+      path: '/p/$id'
+      fullPath: '/p/$id'
+      preLoaderRoute: typeof PIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/room/$code': {
       id: '/room/$code'
       path: '/room/$code'
@@ -217,6 +277,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DocsRoute: DocsRoute,
   HowToPlayRoute: HowToPlayRoute,
   LeaderboardRoute: LeaderboardRoute,
   LobbyRoute: LobbyRoute,
@@ -224,6 +285,8 @@ const rootRouteChildren: RootRouteChildren = {
   PresentationRoute: PresentationRoute,
   ProfileRoute: ProfileRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  EmbedIdRoute: EmbedIdRoute,
+  PIdRoute: PIdRoute,
   RoomCodeRoute: RoomCodeRoute,
 }
 export const routeTree = rootRouteImport
