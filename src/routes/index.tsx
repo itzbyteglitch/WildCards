@@ -26,14 +26,48 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
+  const cardsRef = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  React.useEffect(() => {
+    const title = titleRef.current;
+    if (title) {
+      title.animate(
+        [
+          { opacity: 0, transform: "translateY(18px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        { duration: 650, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "both" },
+      );
+    }
+
+    cardsRef.current.forEach((card, i) => {
+      if (!card) return;
+      card.animate(
+        [
+          { opacity: 0, transform: `translate(${getCardX(i)}px, 70px) rotate(${getCardRotation(i)}deg) scale(0.96)` },
+          { opacity: 1, transform: `translate(${getCardX(i)}px, 0) rotate(${getCardRotation(i)}deg) scale(1)` },
+        ],
+        {
+          duration: 600,
+          delay: 220 + i * 100,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "both",
+        },
+      );
+    });
+  }, []);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <section className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <motion.h1
+            ref={titleRef}
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            className="home-hero-title text-5xl md:text-6xl font-display font-bold leading-[1.05]"
+            className="text-5xl md:text-6xl font-display font-bold leading-[1.05]"
+            style={{ opacity: 0 }}
           >
             The classic card game,
             <br />
@@ -75,14 +109,11 @@ function Landing() {
             ].map((it, i) => (
               <motion.div
                 key={it.c.id}
+                ref={(el) => { cardsRef.current[i] = el; }}
                 initial={false}
-                animate={{ y: 0, opacity: 1, x: it.x, rotate: it.r }}
-                className="home-hero-card absolute"
-                style={{
-                  "--card-delay": `${250 + i * 100}ms`,
-                  "--card-x": `${it.x}px`,
-                  "--card-rotate": `${it.r}deg`,
-                } as React.CSSProperties}
+                animate={{ opacity: 1 }}
+                className="absolute"
+                style={{ opacity: 0 }}
               >
                 <UnoCard card={it.c} size="lg" />
               </motion.div>
@@ -105,6 +136,14 @@ function Landing() {
       </section>
     </div>
   );
+}
+
+function getCardX(index: number) {
+  return [-110, -55, 0, 55, 110][index] ?? 0;
+}
+
+function getCardRotation(index: number) {
+  return [-18, -6, 6, 18, 30][index] ?? 0;
 }
 
 function Feature({ icon, label }: { icon: React.ReactNode; label: string }) {
