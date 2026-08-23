@@ -1,6 +1,6 @@
 import * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, useAnimationControls } from "motion/react";
 import { UnoCard } from "@/components/uno-card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Bot, Zap } from "lucide-react";
@@ -29,13 +29,23 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
+  const headingControls = useAnimationControls();
+  const cardsControls = useAnimationControls();
+
+  React.useEffect(() => {
+    // Start the homepage hero animations explicitly on the client.
+    // This makes them run on a fresh load/refresh as well as route navigation.
+    void headingControls.start({ opacity: 1, y: 0 });
+    void cardsControls.start({ opacity: 1, scale: 1 });
+  }, [headingControls, cardsControls]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
       <section className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={headingControls}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl md:text-6xl font-display font-bold leading-[1.05]"
           >
@@ -68,7 +78,7 @@ function Landing() {
         </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={cardsControls}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="relative h-[380px]"
         >
