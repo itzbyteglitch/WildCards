@@ -50,6 +50,29 @@ A production-quality, browser-based multiplayer UNO game built with React, TypeS
 | **Deployment** | Cloudflare Pages (frontend), Cloudflare Workers (backend)                                                     |
 | **Tooling**    | ESLint, Prettier, TypeScript, TanStack Start                                                                  |
 
+## AI-Assisted Development
+
+### Our AI-Powered Development Workflow
+
+AI was integrated throughout our development process — from **planning and architecture to coding, debugging, UI refinement, and testing**.
+
+**01 — Custom AI Agent**  
+Our own AI coding agent, **inspired by Claude Code™**, customized around our development workflow. Currently in **beta and not publicly released**.
+
+**02 — Multi-Model Engineering**  
+We worked with multiple AI models for different workloads, including **NVIDIA Nemotron 3 Ultra, NVIDIA Nemotron Nano 12B v2 VL, Cohere North Mini Code, Kimi K2.7 Code, MiniMax M3, and ChatGPT**.
+
+**03 — Automated Review Workflow**  
+We implemented a workflow that **visually inspects the UI and analyzes application logs** to identify errors, inconsistencies, and design imperfections. This helped us continuously refine both **functionality and user experience**.
+
+### AI With Human Oversight
+
+We did not use AI blindly. We **reviewed, tested, verified, and understood its outputs** before integrating them into the project.
+
+> **The skill is not just using AI — it is knowing how to use it correctly, efficiently, and ethically.**
+
+**AI accelerated our development. Human judgment remained responsible for the final decisions.**
+
 ## Architecture
 
 ```mermaid
