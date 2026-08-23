@@ -1,28 +1,28 @@
-# 🃏 WildCards — UNO Online
+# WildCards — UNO Online
 
 > A production-quality, browser-based multiplayer UNO game built with React, TypeScript, and Cloudflare Workers. Play with friends or bots in real time — no downloads, no accounts required.
 
 <p align="center">
-  <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/🎮_Play_WildCards-FF6B4A?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Play WildCards"></a>
-  <a href="https://github.com/ItzByteGlitch/WildCards"><img src="https://img.shields.io/badge/💻_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/Play_WildCards-FF6B4A?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Play WildCards"></a>
+  <a href="https://github.com/ItzByteGlitch/WildCards"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
 
-## ✨ Features
+## Features
 
-- 🎮 **Real-time Multiplayer** — WebSocket-powered rooms with Cloudflare Durable Objects
-- 📱 **Cross-device Sync** — Play across desktop and mobile browsers
-- 🤖 **Smart Bots** — AI opponents with strategic play
-- 👤 **Guest Login** — Jump in instantly with a username and avatar
-- 🔑 **Room System** — Create private/public rooms and invite by 6-letter code
-- 🃏 **Complete UNO Rules** — Draw, Skip, Reverse, Draw Two, Wild, Wild Draw Four
-- ⏱️ **Turn Timer** — Configurable turn limits with visual indicator
-- 🏆 **Score Tracking** — Persistent stats, wins, and leaderboard
-- 🌙 **Dark/Light Mode** — System-aware theming
-- 📐 **Responsive Design** — Desktop, tablet, and mobile support
-- ♿ **Accessibility** — Keyboard navigation and screen reader support
-- ☁️ **Free Hosting** — Designed to run on Cloudflare's free tier
+- **Real-time Multiplayer** — WebSocket-powered rooms with Cloudflare Durable Objects
+- **Cross-device Sync** — Play across desktop and mobile browsers
+- **Smart Bots** — AI opponents with strategic play
+- **Guest Login** — Jump in instantly with a username and avatar
+- **Room System** — Create private/public rooms and invite by 6-letter code
+- **Complete UNO Rules** — Draw, Skip, Reverse, Draw Two, Wild, Wild Draw Four
+- **Turn Timer** — Configurable turn limits with visual indicator
+- **Score Tracking** — Persistent stats, wins, and leaderboard
+- **Dark/Light Mode** — System-aware theming
+- **Responsive Design** — Desktop, tablet, and mobile support
+- **Accessibility** — Keyboard navigation and screen reader support
+- **Free Hosting** — Designed to run on Cloudflare's free tier
 
-## 🧠 AI-Assisted Development
+## AI-Assisted Development
 
 AI was integrated throughout our development process — from **planning and architecture to coding, debugging, UI refinement, and testing**.
 
@@ -46,7 +46,7 @@ We did not use AI blindly. We **reviewed, tested, verified, and understood its o
 
 **AI accelerated our development. Human judgment remained responsible for the final decisions.**
 
-## 🧰 Technologies
+## Technologies
 
 ### Frontend
 
@@ -85,38 +85,38 @@ We did not use AI blindly. We **reviewed, tested, verified, and understood its o
 ### Project Status
 
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![CI](https://img.shields.io/github/actions/workflow/status/itzbyteglitch/WildCards/ci.yml?style=for-the-badge)](https://github.com/itzbyteglitch/WildCards/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/itzbyteglitch/WildCards/ci.yml?style=for-the-badge)](https://github.com/itzByteGlitch/WildCards/actions/workflows/ci.yml)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-wildcards.itzbyteglitch.qzz.io-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://wildcards.itzbyteglitch.qzz.io)
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
-    subgraph Frontend["🌐 Frontend (React + TypeScript)"]
+    subgraph Frontend["Frontend (React + TypeScript)"]
         direction TB
-        Routes["📄 Pages / Routes<br/>(TanStack Router)"]
-        UIKit["🎨 UI Components<br/>(Radix UI + Tailwind CSS)"]
-        State["📦 Client State<br/>(Zustand + TanStack Query)"]
-        Engine["🎮 Game Engine<br/>(Pure TypeScript, Zero Dependencies)"]
+        Routes["Pages / Routes<br/>(TanStack Router)"]
+        UIKit["UI Components<br/>(Radix UI + Tailwind CSS)"]
+        State["Client State<br/>(Zustand + TanStack Query)"]
+        Engine["Game Engine<br/>(Pure TypeScript, Zero Dependencies)"]
     end
 
-    subgraph Transport["🔌 Transport Layer (Auto-Selection)"]
+    subgraph Transport["Transport Layer (Auto-Selection)"]
         direction TB
-        Factory["⚙️ Transport Factory<br/>(createTransport)"]
-        WS["🔌 WebSocket Transport<br/>(Cloudflare Workers + Durable Objects)"]
-        SupabaseTransport["📡 Supabase Transport<br/>(Realtime Broadcast)"]
-        Broadcast["📻 BroadcastChannel<br/>(Same-Browser Fallback)"]
+        Factory["Transport Factory<br/>(createTransport)"]
+        WS["WebSocket Transport<br/>(Cloudflare Workers + Durable Objects)"]
+        SupabaseTransport["Supabase Transport<br/>(Realtime Broadcast)"]
+        Broadcast["BroadcastChannel<br/>(Same-Browser Fallback)"]
     end
 
-    subgraph Backend["☁️ Backend (Cloudflare)"]
+    subgraph Backend["Backend (Cloudflare)"]
         direction TB
-        Workers["⚡ Cloudflare Workers<br/>(Hono + Edge Runtime)"]
-        DO["🏗️ Durable Objects<br/>(WebSocket Room Server)"]
-        D1["💾 Cloudflare D1<br/>(SQLite Database)"]
+        Workers["Cloudflare Workers<br/>(Hono + Edge Runtime)"]
+        DO["Durable Objects<br/>(WebSocket Room Server)"]
+        D1["Cloudflare D1<br/>(SQLite Database)"]
     end
 
-    subgraph External["🔗 External Services"]
-        Supabase["🗄️ Supabase<br/>(Auth + Realtime + Postgres)"]
+    subgraph External["External Services"]
+        Supabase["Supabase<br/>(Auth + Realtime + Postgres)"]
     end
 
     Routes --> Factory
@@ -132,7 +132,7 @@ flowchart LR
     SupabaseTransport --> Supabase
 ```
 
-## 🎮 Game Engine
+## Game Engine
 
 The UNO engine (`src/lib/uno/`) is completely decoupled from the UI:
 
@@ -158,7 +158,7 @@ const { state, error } = applyAction(game, {
 });
 ```
 
-## 🔌 Realtime Transport
+## Realtime Transport
 
 The transport layer automatically selects the best available backend:
 
@@ -168,7 +168,7 @@ The transport layer automatically selects the best available backend:
 
 All transports implement the same `Transport` interface for seamless switching.
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 WildCards/
@@ -197,7 +197,7 @@ WildCards/
 └── public/
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -228,7 +228,7 @@ CLOUDFLARE_ACCOUNT_ID=your_account_id
 CLOUDFLARE_API_TOKEN=your_api_token
 ```
 
-## ☁️ Deployment
+## Deployment
 
 ### Frontend — Cloudflare Pages
 
@@ -254,7 +254,7 @@ npx wrangler d1 create wildcards
 npx wrangler d1 execute wildcards --file=./supabase/migrations/*.sql
 ```
 
-## 📜 Scripts
+## Scripts
 
 | Command | Description |
 | --- | --- |
@@ -265,7 +265,7 @@ npx wrangler d1 execute wildcards --file=./supabase/migrations/*.sql
 | `pnpm format` | Format with Prettier |
 | `pnpm typecheck` | Run TypeScript type checking |
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -275,11 +275,11 @@ npx wrangler d1 execute wildcards --file=./supabase/migrations/*.sql
 
 Before submitting, ensure `pnpm lint` and `pnpm typecheck` pass and follow the existing code style.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [TanStack](https://tanstack.com/) for the router, query, and start frameworks
 - [Radix UI](https://www.radix-ui.com/) for accessible component primitives
