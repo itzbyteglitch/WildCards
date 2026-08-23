@@ -14,7 +14,10 @@ export const Route = createFileRoute("/")({
         content:
           "Play UNO in your browser with friends or bots. Free, fast, and beautifully polished.",
       },
-      { property: "og:title", content: "WildCards — Play the classic card game" },
+      {
+        property: "og:title",
+        content: "WildCards — Play the classic card game",
+      },
       {
         property: "og:description",
         content:
@@ -37,7 +40,11 @@ function Landing() {
           { opacity: 0, transform: "translateY(18px)" },
           { opacity: 1, transform: "translateY(0)" },
         ],
-        { duration: 650, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "both" },
+        {
+          duration: 650,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "both",
+        },
       );
     }
 
@@ -45,8 +52,14 @@ function Landing() {
       if (!card) return;
       card.animate(
         [
-          { opacity: 0, transform: `translate(${getCardX(i)}px, 70px) rotate(${getCardRotation(i)}deg) scale(0.96)` },
-          { opacity: 1, transform: `translate(${getCardX(i)}px, 0) rotate(${getCardRotation(i)}deg) scale(1)` },
+          {
+            opacity: 0,
+            transform: `translate(${getCardX(i)}px, 70px) rotate(${getCardRotation(i)}deg) scale(0.96)`,
+          },
+          {
+            opacity: 1,
+            transform: `translate(${getCardX(i)}px, 0) rotate(${getCardRotation(i)}deg) scale(1)`,
+          },
         ],
         {
           duration: 600,
@@ -101,15 +114,49 @@ function Landing() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-uno-blue/10 blur-3xl" />
           <div className="relative flex items-center justify-center h-full">
             {[
-              { c: { id: "1", color: "red" as const, value: "7" as const }, r: -18, x: -110 },
-              { c: { id: "2", color: "yellow" as const, value: "skip" as const }, r: -6, x: -55 },
-              { c: { id: "3", color: "blue" as const, value: "draw2" as const }, r: 6, x: 0 },
-              { c: { id: "4", color: "wild" as const, value: "wild4" as const }, r: 18, x: 55 },
-              { c: { id: "5", color: "green" as const, value: "3" as const }, r: 30, x: 110 },
+              {
+                c: { id: "1", color: "red" as const, value: "7" as const },
+                r: -18,
+                x: -110,
+              },
+              {
+                c: {
+                  id: "2",
+                  color: "yellow" as const,
+                  value: "skip" as const,
+                },
+                r: -6,
+                x: -55,
+              },
+              {
+                c: {
+                  id: "3",
+                  color: "blue" as const,
+                  value: "draw2" as const,
+                },
+                r: 6,
+                x: 0,
+              },
+              {
+                c: {
+                  id: "4",
+                  color: "wild" as const,
+                  value: "wild4" as const,
+                },
+                r: 18,
+                x: 55,
+              },
+              {
+                c: { id: "5", color: "green" as const, value: "3" as const },
+                r: 30,
+                x: 110,
+              },
             ].map((it, i) => (
               <motion.div
                 key={it.c.id}
-                ref={(el) => { cardsRef.current[i] = el; }}
+                ref={(el) => {
+                  cardsRef.current[i] = el;
+                }}
                 initial={false}
                 animate={{ opacity: 1 }}
                 className="absolute"
@@ -124,9 +171,18 @@ function Landing() {
 
       <section className="mt-24 grid md:grid-cols-3 gap-6">
         {[
-          { t: "Play instantly", d: "One click to start a match. Bots fill empty seats." },
-          { t: "Invite friends", d: "Share a 6-letter code. Cross-tab rooms work today; wire a Worker + DO for global rooms." },
-          { t: "Track your stats", d: "Local profile, wins, score, and leaderboard — no signup required." },
+          {
+            t: "Play instantly",
+            d: "One click to start a match. Bots fill empty seats.",
+          },
+          {
+            t: "Invite friends",
+            d: "Share a 6-letter code. Cross-tab rooms work today; wire a Worker + DO for global rooms.",
+          },
+          {
+            t: "Track your stats",
+            d: "Local profile, wins, score, and leaderboard — no signup required.",
+          },
         ].map((f) => (
           <div key={f.t} className="card-elevated p-6">
             <h3 className="font-display text-lg font-semibold">{f.t}</h3>
@@ -149,7 +205,9 @@ function getCardRotation(index: number) {
 function Feature({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-      <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-accent">{icon}</span>
+      <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-accent">
+        {icon}
+      </span>
       {label}
     </div>
   );
