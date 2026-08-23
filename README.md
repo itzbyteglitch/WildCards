@@ -3,8 +3,8 @@
 > A production-quality, browser-based multiplayer UNO game built with React, TypeScript, and Cloudflare Workers. Play with friends or bots in real time — no downloads, no accounts required.
 
 <p align="center">
-  <a href="https://wildcards.itzbyteglitch.qzz.io"><strong>🎮 Play WildCards</strong></a> ·
-  <a href="https://github.com/ItzByteGlitch/WildCards"><strong>💻 GitHub</strong></a>
+  <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/🎮_Play_WildCards-FF6B4A?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Play WildCards"></a>
+  <a href="https://github.com/ItzByteGlitch/WildCards"><img src="https://img.shields.io/badge/💻_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>
 
 ## ✨ Features
