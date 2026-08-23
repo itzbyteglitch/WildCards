@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/wildcards-readme-banner.svg" alt="WildCards — Online Card Game" width="100%">
+</p>
+
 # WildCards — UNO Online
 
 > A production-quality, browser-based multiplayer UNO game built with React, TypeScript, and Cloudflare Workers. Play with friends or bots in real time — no downloads, no accounts required.
@@ -145,8 +149,8 @@ The UNO engine (`src/lib/uno/`) is completely decoupled from the UI:
 import { createGame, applyAction } from "@/lib/uno/engine";
 
 const seats = [
-  { id: "p1", name: "Alice", avatar: "🐱", isBot: false },
-  { id: "p2", name: "Bob", avatar: "🤖", isBot: true },
+  { id: "p1", name: "Alice", avatar: "player", isBot: false },
+  { id: "p2", name: "Bob", avatar: "bot", isBot: true },
 ];
 
 const game = createGame(seats);
