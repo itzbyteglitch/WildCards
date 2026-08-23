@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
+  <title id="title">WildCards — Online Card Game</title>
+  <desc id="desc">A dark promotional banner for WildCards featuring the four signature card colors and a fan of cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090909"/>
+      <stop offset="0.55" stop-color="#111111"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff784f"/>
+      <stop offset="1" stop-color="#d83b1f"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.2" fill="#fff" opacity="0.09"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="560" rx="28" fill="url(#bg)"/>
+  <rect width="1600" height="560" rx="28" fill="url(#dots)"/>
+
+  <path d="M-100 500 C180 260 300 620 650 420" fill="none" stroke="#3b3b3b" stroke-width="2" opacity="0.5"/>
+  <path d="M-40 540 C210 310 300 600 610 450" fill="none" stroke="url(#orange)" stroke-width="4" opacity="0.85"/>
+  <path d="M1050 -70 C1220 100 1220 240 1030 400" fill="none" stroke="#b83218" stroke-width="3" opacity="0.7"/>
+  <circle cx="1330" cy="120" r="210" fill="#ff4d24" opacity="0.08" filter="url(#soft)"/>
+
+  <g transform="translate(115 175)">
+    <rect x="0" y="0" width="72" height="96" rx="13" transform="rotate(-8 36 48)" fill="#ef2d24"/>
+    <rect x="86" y="-8" width="72" height="96" rx="13" transform="rotate(8 122 40)" fill="#f5c51b"/>
+    <rect x="-3" y="112" width="72" height="96" rx="13" transform="rotate(8 33 160)" fill="#16a34a"/>
+    <rect x="87" y="104" width="72" height="96" rx="13" transform="rotate(-8 123 152)" fill="#1479d1"/>
+  </g>
+
+  <g transform="translate(330 165)">
+    <text x="0" y="100" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="92" font-weight="800" letter-spacing="-4">WildCards</text>
+    <rect x="3" y="128" width="150" height="5" rx="2.5" fill="url(#orange)"/>
+    <text x="0" y="178" fill="#b7b7b7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" font-weight="500" letter-spacing="2">ONLINE CARD GAME</text>
+    <text x="2" y="228" fill="#777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="400">Real-time multiplayer • Smart bots • Built for the web</text>
+  </g>
+
+  <g transform="translate(1130 110)" filter="url(#shadow)">
+    <g transform="rotate(18 130 180)">
+      <rect x="80" y="0" width="210" height="360" rx="24" fill="#e9342b" stroke="#f5f5f5" stroke-width="8"/>
+      <text x="185" y="215" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="92" font-weight="900">⊘</text>
+    </g>
+    <g transform="rotate(10 130 180)">
+      <rect x="55" y="0" width="210" height="360" rx="24" fill="#159447" stroke="#f5f5f5" stroke-width="8"/>
+      <text x="160" y="218" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="78" font-weight="900">+2</text>
+    </g>
+    <g transform="rotate(3 130 180)">
+      <rect x="30" y="0" width="210" height="360" rx="24" fill="#1677cf" stroke="#f5f5f5" stroke-width="8"/>
+      <text x="135" y="218" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="78" font-weight="900">↻</text>
+    </g>
+    <g transform="rotate(-5 130 180)">
+      <rect x="5" y="0" width="210" height="360" rx="24" fill="#f3c51a" stroke="#f5f5f5" stroke-width="8"/>
+      <text x="110" y="220" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="92" font-weight="900">7</text>
+    </g>
+    <g transform="rotate(-14 130 180)">
+      <rect x="-20" y="0" width="210" height="360" rx="24" fill="#171717" stroke="#f5f5f5" stroke-width="9"/>
+      <ellipse cx="85" cy="182" rx="68" ry="105" fill="#fff"/>
+      <path d="M85 77 A68 105 0 0 1 85 182 L85 182 A68 105 0 0 0 85 77" fill="#ef2d24"/>
+      <path d="M85 182 A68 105 0 0 1 85 287 L85 182 A68 105 0 0 0 85 182" fill="#159447"/>
+      <path d="M85 77 A68 105 0 0 0 85 182 L85 182 A68 105 0 0 1 85 77" fill="#f3c51a" opacity="0.95"/>
+      <path d="M85 182 A68 105 0 0 0 85 287 L85 182 A68 105 0 0 1 85 182" fill="#1677cf" opacity="0.95"/>
+      <ellipse cx="85" cy="182" rx="68" ry="105" fill="none" stroke="#111" stroke-width="2" opacity="0.35"/>
+      <circle cx="42" cy="56" r="18" fill="#fff"/>
+      <circle cx="42" cy="56" r="11" fill="#ef2d24"/>
+    </g>
+  </g>
+
+  <rect x="24" y="24" width="1552" height="512" rx="20" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+</svg>
