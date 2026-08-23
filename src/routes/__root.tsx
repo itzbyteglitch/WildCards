@@ -4,9 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -41,9 +43,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    // Error is already logged above; could integrate with error tracking service here
-  }, [error]);
+  useEffect(() => {}, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -146,6 +146,27 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function AnimatedPage() {
+  const locationKey = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={locationKey}
+        initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        exit={{ opacity: 0, y: -8, filter: "blur(3px)" }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        className="min-h-full"
+      >
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -153,8 +174,8 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
         <SiteNav />
-        <main className="flex-1">
-          <Outlet />
+        <main className="flex-1 overflow-hidden">
+          <AnimatedPage />
         </main>
         <SiteFooter />
       </div>
