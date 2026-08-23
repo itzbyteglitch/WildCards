@@ -11,7 +11,10 @@ export const Route = createFileRoute("/presentation")({
         content:
           "Technical presentation of WildCards — browser-based multiplayer UNO game architecture, features, and implementation.",
       },
-      { property: "og:title", content: "WildCards — Technical Presentation" },
+      {
+        property: "og:title",
+        content: "WildCards — Technical Presentation",
+      },
       {
         property: "og:description",
         content: "WildCards technical project presentation",
@@ -64,7 +67,7 @@ function PresentationPage() {
           <div className="w-full" style={{ aspectRatio: "16 / 9" }}>
             <iframe
               ref={iframeRef}
-              src="https://storage.googleapis.com/ppt-html-converter-ppt-hosted/8590a9c1-27cc-48e1-bf3d-a0ac58f3d836/index.html"
+              src="https://storage.googleapis.com/ppt-html-converter-ppt-hosted/0e6da9df-fe74-422f-896f-0db0aadda372/index.html"
               title="WildCards Technical Presentation"
               className="h-full w-full border-0"
               allow="fullscreen; autoplay; clipboard-read; clipboard-write"
