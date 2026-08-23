@@ -1,3 +1,4 @@
+import * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { UnoCard } from "@/components/uno-card";
@@ -35,6 +36,7 @@ function Landing() {
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl md:text-6xl font-display font-bold leading-[1.05]"
           >
             The classic card game,
@@ -67,7 +69,7 @@ function Landing() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.15 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
           className="relative h-[380px]"
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-uno-blue/10 blur-3xl" />
@@ -105,11 +107,12 @@ function Landing() {
             ].map((it, i) => (
               <motion.div
                 key={it.c.id}
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2 + i * 0.08 }}
-                style={{
-                  transform: `translateX(${it.x}px) rotate(${it.r}deg)`,
+                initial={{ y: 80, opacity: 0, x: it.x, rotate: it.r }}
+                animate={{ y: 0, opacity: 1, x: it.x, rotate: it.r }}
+                transition={{
+                  delay: 0.25 + i * 0.1,
+                  duration: 0.55,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="absolute"
               >
