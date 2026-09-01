@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/Play_WildCards-FF6B4A?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Play WildCards"></a>
-  <a href="https://github.com/ItzByteGlitch/WildCards"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://github.com/ItzByteGlitch/WildCards"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>\n  <a href="https://gitlab.com/itzbyteglitch/wild-cards"><img src="https://img.shields.io/badge/GitLab-181717?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab Mirror"></a>
 </p>
 
 ## Features
